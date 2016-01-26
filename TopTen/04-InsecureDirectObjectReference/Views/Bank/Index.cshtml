@@ -1,0 +1,26 @@
+﻿@model _04_InsecureDirectObjectReference.Controllers.BankIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>
+            Account
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (string accountNumberModel in Model.AccountNumbers)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(accountNumberModel,"Account",new { accountNumber = accountNumberModel})
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
