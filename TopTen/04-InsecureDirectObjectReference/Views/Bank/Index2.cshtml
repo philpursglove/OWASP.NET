@@ -14,14 +14,11 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (string accountNumberModel in Model.AccountNumbers)
-    {
-        <tr>
-            <td>
-                @Html.ActionLink(accountNumberModel,"Account",new { accountNumber = accountNumberModel})
-            </td>
-        </tr>
-    }
-
+        @foreach (Pair account in Model.Accounts)
+        {
+            <tr>
+                <td>@Html.ActionLink(account.First.ToString(),"Account2",new {accountId = account.Second.ToString()})</td>
+            </tr>
+        }
     </tbody>
 </table>
