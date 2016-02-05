@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index"))
+{
+    @Html.Label("Enter your attack here:")
+    @Html.TextArea("RichText")
+    <br/>
+    <input type="submit" value="Submit"/>
+}
+
+@if (ViewBag.RichText != string.Empty)
+{
+    @: @ViewBag.RichText
+}
